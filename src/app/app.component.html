@@ -1,0 +1,88 @@
+<h2 class="title">Part 1: Card Component</h2>
+<div class="card">
+  <img
+    src="https://github.com/lokesv21/angular/blob/main/src/assets/images/jake-oates-E38KRRk1fvg-unsplash.jpg"
+    class="card-img-top"
+    alt="image"
+  />
+  <div class="card-body">
+    <h5 class="card-title">Beach Day</h5>
+    <p class="card-text-1">RUFUS THE DOG</p>
+    <p class="card-text-2">Modified 02/18/19 by bfrost</p>
+  </div>
+</div>
+
+<h2 class="title">Part 2: Form Elements</h2>
+<div id="form-container">
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Enter Name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        placeholder="Enter Email"
+      />
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input
+        type="tel"
+        class="form-control"
+        id="phone"
+        placeholder="Enter Phone Number"
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="Password"
+      />
+    </div>
+    <div class="form-group">
+      <label for="cpassword">Confirm Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="cpassword"
+        placeholder="Confirm Password"
+      />
+    </div>
+    <button type="submit" class="btn">Save</button>
+  </form>
+</div>
+
+<h2 class="title">Part 3: Table Functions</h2>
+<table class="table" cellpadding="0" cellspacing="0">
+  <thead>
+    <tr>
+      <th scope="col" *ngFor="let h of headers">
+        <span
+          (click)="onSortClick($event,h.key)"
+          [class.off]="sorted != h.key"
+          class="sort-icon down"
+        ></span>
+        {{h.label}}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let obj of cookies;">
+      <td>{{obj.name}}</td>
+      <td>{{obj.price}}</td>
+      <td>{{obj.category}}</td>
+    </tr>
+  </tbody>
+</table>
